@@ -59,7 +59,7 @@ class SwearOptionsPanel:
     def __init__(s, source):
         w = s.w = AR.cw(
             source=source,
-            size=(350, 350),
+            size=(350, 290),
             ps=AR.UIS() * 0.8
         )
         
@@ -68,23 +68,23 @@ class SwearOptionsPanel:
             text='SWEAR OPTIONS',
             scale=1.5,
             h_align='center',
-            position=(150, 320),
+            position=(150, 260),
             color=(1, 0.3, 0.3)
         )
         
         buttons = [
-            ('Add New Swear', 'AddSwear', (35, 260)),
-            ('Remove Swear', 'RemoveSwear', (190, 260)),
-            ('View All Swears', 'SwearList', (35, 140)),
-            ('Load Default Swears', 'load_default_swears', (190, 200)),
-            ('Clear All Swears', 'clear_all_swears', (35, 200)),
-            ('Settings', 'Settings', (190, 140))
+            ('Add New Swear', 'AddSwear', (35, 200)),
+            ('Remove Swear', 'RemoveSwear', (190, 200)),
+            ('View All Swears', 'SwearList', (35, 80)),
+            ('Load Default Swears', 'load_default_swears', (190,140)),
+            ('Clear All Swears', 'clear_all_swears', (35, 140)),
+            ('Settings', 'Settings', (190, 80))
         ]
         tw(
             parent=w,
             text=f'Total Swear Words: {len(var("swears") or {})}',
             scale=0.8,
-            position=(150, 100),
+            position=(150, 40),
             h_align='center',
             color=(0.8, 0.8, 1)
         )
@@ -94,7 +94,7 @@ class SwearOptionsPanel:
             text='https://t.me/SinglMod',
             scale=0.8,
             h_align='center',
-            position=(150, 50),
+            position=(150, 10),
             color=(0, 0.5, 0.3)
         )
             
@@ -149,7 +149,7 @@ class WhiteListOptionsPanel:
     def __init__(s, source):
         w = s.w = AR.cw(
             source=source,
-            size=(350, 320),
+            size=(350, 290),
             ps=AR.UIS() * 0.8
         )
         tw(
@@ -157,7 +157,7 @@ class WhiteListOptionsPanel:
             text='WHITE LIST OPTIONS',
             scale=1.2,
             h_align='center',
-            position=(150, 270),
+            position=(150, 260),
             color=(0.3, 1, 0.3)
         )
         buttons = [
@@ -312,7 +312,7 @@ class RemoveSwear:
             
         w = AR.cw(
             source=t,
-            size=(400, 450),
+            size=(400, 290),
             ps=AR.UIS() * 0.8
         )
         
@@ -321,22 +321,13 @@ class RemoveSwear:
             text='REMOVE SWEAR WORD',
             scale=1.2,
             h_align='center',
-            position=(175, 420),
+            position=(175, 250),
             color=(1, 0.5, 0.5)
-        )
-        
-        tw(
-            parent=w,
-            text=f'Total swear words: {i}',
-            scale=0.9,
-            position=(175, 390),
-            h_align='center',
-            color=(0.8, 0.8, 1)
         )
         
         a = sw(
             parent=w,
-            size=(360, 300),
+            size=(360, 150),
             position=(20, 80)
         )
         
@@ -515,31 +506,22 @@ class RemoveWhiteList:
             
         w = AR.cw(
             source=t,
-            size=(400, 450),
+            size=(400, 290),
             ps=AR.UIS() * 0.8
         )
         
         tw(
             parent=w,
-            text='REMOVE FROM WHITE LIST',
+            text='REMOVE WHITE LIST',
             scale=1.3,
             h_align='center',
-            position=(200, 420),
+            position=(200, 250),
             color=(0.5, 1, 0.5)
-        )
-        
-        tw(
-            parent=w,
-            text=f'Names in white list: {i}',
-            scale=0.9,
-            position=(200, 390),
-            h_align='center',
-            color=(0.8, 1, 0.8)
         )
         
         a = sw(
             parent=w,
-            size=(360, 300),
+            size=(360, 150),
             position=(20, 80)
         )
         
@@ -627,7 +609,7 @@ class Settings:
     def __init__(s, t):
         w = AR.cw(
             source=t,
-            size=(400, 320),
+            size=(400, 290),
             ps=AR.UIS() * 0.8
         )
         
@@ -636,7 +618,7 @@ class Settings:
             text='SETTINGS',
             scale=1.5,
             h_align='center',
-            position=(175, 290),
+            position=(175, 260),
             color=(0.3, 0.6, 1)
         )
         
@@ -652,7 +634,7 @@ class Settings:
                 size=(350, 35),
                 color=(1, 1, 1),
                 value=var(config_key),
-                position=(25, 230 - 45 * i),
+                position=(25, 180 - 50 * i),
                 textcolor=(0.2, 0.2, 0.3),
                 text_scale=0.9,
                 on_value_change_call=CallPartial(var, config_key)
@@ -689,31 +671,22 @@ class SwearList:
             
         w = AR.cw(
             source=t,
-            size=(400, 500),
+            size=(400, 290),
             ps=AR.UIS() * 0.8
         )
         
         tw(
             parent=w,
-            text='SWEAR WORDS LIST',
+            text='SWEAR LIST',
             scale=1.5,
             h_align='center',
-            position=(200, 470),
+            position=(175,260),
             color=(1, 0.5, 0.5)
-        )
-        
-        tw(
-            parent=w,
-            text=f'Total: {count} words',
-            scale=0.9,
-            position=(200, 440),
-            h_align='center',
-            color=(0.8, 0.8, 1)
         )
         
         scroll_area = sw(
             parent=w,
-            size=(360, 350),
+            size=(360, 170),
             position=(20, 70)
         )
         
@@ -781,7 +754,7 @@ class WhiteListView:
             
         w = AR.cw(
             source=t,
-            size=(400, 500),
+            size=(400,290),
             ps=AR.UIS() * 0.8
         )
         
@@ -790,29 +763,21 @@ class WhiteListView:
             text='WHITE LIST',
             scale=1.5,
             h_align='center',
-            position=(200, 470),
+            position=(175, 260),
             color=(0.5, 1, 0.5)
         )
         
-        tw(
-            parent=w,
-            text=f'Total: {count} names',
-            scale=0.9,
-            position=(200, 440),
-            h_align='center',
-            color=(0.8, 1, 0.8)
-        )
         
         scroll_area = sw(
             parent=w,
-            size=(360, 350),
+            size=(360, 190),
             position=(20, 70)
         )
         
         s.container = cw(
             parent=scroll_area,
             size=(360, count * 40),
-            background=False,
+            background=True,
         )
         
         s.name_widgets = []
@@ -1159,4 +1124,4 @@ class SinglReporter(Plugin):
                 gs('dingSmallHigh').play()
     
     def on_app_running(self):
-        push("Singl Reporter v1.5 loaded!", color=(0, 1, 0))
+        push("Singl Reporter v1.0", color=(0, 1, 0.5))
