@@ -905,24 +905,19 @@ class AR:
                 color=color
             )
         s.update_stats_display(w)
-        
-        # وضعیت فعلی پلاگین را بگیرید
         current_state = var('enabled')
-        
-        # دکمه را بر اساس وضعیت واقعی تنظیم کنید
         s.toggle_button = s.create_button(
             parent=w,
             label='ON' if current_state else 'OFF',
             size=(100, 35),
             position=(105, 10),
             on_activate_call=CallStrict(s.toggle_system),
-            color=(0, 0.7, 0) if current_state else (0.7, 0, 0)  # سبز برای ON، قرمز برای OFF
+            color=(0, 0.7, 0) if current_state else (0.7, 0, 0) 
         )
 
         AR.swish()
     
     def update_status_indicator(s, w):
-        # نمایشگر وضعیت پلاگین
         status_color = (0, 0.7, 0) if var('enabled') else (0.7, 0, 0)
         status_text = 'ACTIVE' if var('enabled') else 'INACTIVE'
         
@@ -947,12 +942,10 @@ class AR:
         current_state = var('enabled')
         new_state = not current_state
         var('enabled', new_state)
-        
-        # به روز رسانی دکمه با وضعیت جدید
         bw(
             s.toggle_button,
             label='ON' if new_state else 'OFF',
-            color=(0, 0.7, 0) if new_state else (0.7, 0, 0)  # سبز برای ON، قرمز برای OFF
+            color=(0, 0.7, 0) if new_state else (0.7, 0, 0) 
         )
         
         s.update_status_indicator(s.w)
@@ -980,7 +973,7 @@ def reset_conf():
     cfg.commit()
 
 default_configs = {
-    'enabled': True,  # پلاگین به صورت دیفالت روشن است
+    'enabled': True,
     'notify': True,
     'sound': True,
     'case_sensitive': False,
